@@ -1,7 +1,5 @@
 package com.dalmia.crudapp.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -38,7 +36,7 @@ public class IndustrySector {
     // an industry sector can have multiple companies
     @JsonManagedReference
 //    @JsonIgnoreProperties
-    @OneToMany(mappedBy = "theIndustrySector",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "theIndustrySector",cascade = CascadeType.ALL)
     private Set<Company> companies;
 
     @Column(name = "APPROVED_BY")

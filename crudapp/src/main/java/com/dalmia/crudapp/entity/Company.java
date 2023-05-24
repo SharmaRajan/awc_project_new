@@ -43,7 +43,7 @@ public class Company {
     @JsonBackReference
 //    @JsonIgnoreProperties
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL, targetEntity = IndustrySector.class)
-    @JoinColumn(name = "ind_id") // add primary key of industry sector to map it here
+    @JoinColumn(name = "industry_id",referencedColumnName = "ind_id") // referencedColumnName = add primary key of industry sector to map it here
     private IndustrySector theIndustrySector = new IndustrySector();
 
     @Column(name = "APPROVED_BY")

@@ -99,7 +99,6 @@ public class CompanyServiceImpl implements ICompanyService {
                             comp.getPresence(),comp.getTotalNoOfFacility());
         }).collect(Collectors.toList());
 
-
         response.setWrapperList(companyListResponse);
 
         response.setTotalcount(totalCount);

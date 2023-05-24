@@ -12,7 +12,7 @@ import com.codewithrajan.blogapiapp.repository.IUserRepo;
 import com.codewithrajan.blogapiapp.service.IUserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,8 +30,8 @@ public class UserServiceImpl implements IUserService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+//	@Autowired
+//	private PasswordEncoder passwordEncoder;
 
 	@Autowired
 	private IRoleRepo roleRepo;
@@ -43,8 +43,8 @@ public class UserServiceImpl implements IUserService {
 
 		// 1. take care of passwords
 		// encoded the password
-		theUser.setPassword(passwordEncoder.encode(newUserDTO.getPassword()));
-
+//		theUser.setPassword(passwordEncoder.encode(newUserDTO.getPassword()));
+		theUser.setPassword(newUserDTO.getPassword());
 		// 2. take care of roles
 		Role theRole = this.roleRepo.findById(AppConstants.NORMAL_USER).get();
 
