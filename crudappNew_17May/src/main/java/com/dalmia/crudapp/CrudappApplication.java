@@ -12,6 +12,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 /*import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -22,7 +24,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;*/
 
 @SpringBootApplication
 //@EnableSwagger2
-public class CrudappApplication{//} implements CommandLineRunner {
+public class CrudappApplication implements CommandLineRunner {
+
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 //	@Autowired
 //	private ICompanyService companyService;
@@ -39,8 +44,11 @@ public class CrudappApplication{//} implements CommandLineRunner {
 		SpringApplication.run(CrudappApplication.class, args);
 	}
 
-//	@Override
+	@Override
 	public void run(String... args) throws Exception {
+
+		System.out.println("Encoded Jaadu: " + passwordEncoder.encode("Jaadu"));
+
 		/*Company tempCompany = new Company();
 		tempCompany.setCompanyName("TMH");
 		tempCompany.setTotalNoOfFacility(23L);
