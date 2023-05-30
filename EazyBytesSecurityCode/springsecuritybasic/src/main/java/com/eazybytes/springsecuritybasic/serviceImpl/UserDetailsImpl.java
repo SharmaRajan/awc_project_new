@@ -49,7 +49,7 @@ public class UserDetailsImpl implements UserDetails {
         return new UserDetailsImpl(
                 user.getUserId(),
                 user.getUsername(),
-                user.getEmailId(),
+                user.getEmail(),
                 user.getPassword());
 //               , authorities);
     }

@@ -26,7 +26,7 @@ public class User {
 
     @Email
     @Column(name = "email_id",length = 35)
-    private String emailId;
+    private String email;
 
     @Column(name = "username",length = 30)
     private String username;

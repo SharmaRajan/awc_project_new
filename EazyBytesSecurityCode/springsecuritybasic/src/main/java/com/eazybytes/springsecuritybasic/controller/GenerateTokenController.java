@@ -22,6 +22,7 @@ public class GenerateTokenController {
         String token = jwtUtils.generateToken(username);
         HashMap<String,String> response = new HashMap<>();
         response.put("token:", token);
+
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
