@@ -24,7 +24,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;*/
 
 @SpringBootApplication
 //@EnableSwagger2
-public class CrudappApplication implements CommandLineRunner {
+public class GreenfuelApplication implements CommandLineRunner {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
@@ -38,16 +38,19 @@ public class CrudappApplication implements CommandLineRunner {
 //	@Autowired
 //	private IFacilityService facilityService;
 
-	private Logger logger = LoggerFactory.getLogger(CrudappApplication.class);
+	private Logger logger = LoggerFactory.getLogger(GreenfuelApplication.class);
 
 	public static void main(String[] args) {
-		SpringApplication.run(CrudappApplication.class, args);
+		SpringApplication.run(GreenfuelApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
 
-		System.out.println("Encoded Jaadu: " + passwordEncoder.encode("Jaadu"));
+
+
+//		System.out.println("Encoded secretPassword: " + passwordEncoder.encode("secretPassword"));
+//		System.out.println("Decoded password for Sheldon Cooper: " + );
 
 		/*Company tempCompany = new Company();
 		tempCompany.setCompanyName("TMH");
