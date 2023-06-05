@@ -21,6 +21,8 @@ public class JwtTokenUtil implements Serializable {
     private static final long serialVersionUID = -2550185165626007488L;
 
 //    @Value("${simplecoder.app.jwtSecret}")
+//    private String jwtSecret;
+
     private static final Key jwtSecret = Keys.secretKeyFor(SignatureAlgorithm.HS512);;
 
     @Value("${simplecode.app.jwtExpirationMs}")
@@ -65,7 +67,11 @@ public class JwtTokenUtil implements Serializable {
     //   compaction of the JWT to a URL-safe string
     private String doGenerateToken(Map<String, Object> claims, String subject) {
 
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+        return Jwts
+                .builder()
+                .setClaims(claims)
+                .setSubject(subject)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs * 1000))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret).compact();
     }

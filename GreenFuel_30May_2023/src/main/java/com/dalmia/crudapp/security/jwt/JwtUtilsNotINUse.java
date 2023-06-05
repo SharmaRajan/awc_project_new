@@ -11,9 +11,9 @@ import java.security.Key;
 import java.util.Date;
 
 @Component
-public class JwtUtils {
+public class JwtUtilsNotINUse {
 
-    private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
+    private static final Logger logger = LoggerFactory.getLogger(JwtUtilsNotINUse.class);
 
     @Value("${simplecoder.app.jwtSecret}")
     private String jwtSecret;
